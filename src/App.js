@@ -1,43 +1,52 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Experience from "./Experience";
 import Education from "./Education";
 import Contacts from "./Contacts";
+import Button from './Button';
+import Number from './Number';
 
-function App() {
-  return (
-    <div className="App">
-      <header>
-        <img
-          src="https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg"
-          alt="Photo of Sally Student"
-          width="134"
-        />
-        <h1>Sally Student</h1>
-      </header>
+/*
+  - render a button and a number, every button click increments the number
+  - instead of rendering the number, instead render 'even' or 'odd'
 
-      <nav>
-        <ul>
-          <li>
-            <a href="#experience">Experience</a>
-          </li>
-          <li>
-            <a href="#education">Education</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
+  // to do
+  - controlled form (controlled inputs) - user will submit some text, render the text itself as well as the length of the text
 
-      <main>
-        <Experience />
+*/
+
+class App extends Component {
+
+  state = {
+    number: 0,
+  }
+
+  handleButtonClick = () => {
+    const { number } = this.state;
+
+    this.setState({
+      number: number + 1
+    })
+  }
+
+  render() {
+
+    const { number } = this.state;
+
+    return (
+      <div className="App">
+        <Button handleClick={this.handleButtonClick} />
+        <Number number={number} />
+        <hr />
         <Education />
+        <Experience />
         <Contacts />
-      </main>
-    </div>
-  );
+      </div>
+    );
+  }
+
 }
+
 
 export default App;

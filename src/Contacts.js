@@ -11,7 +11,7 @@ function Contacts() {
             <a
               href="mailto:sallystudent@gmail.com?subject=Hi%20Sally!"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               sallystudent@gmail.com
             </a>
