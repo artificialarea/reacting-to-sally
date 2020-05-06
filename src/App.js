@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import "./App.css";
 import Experience from "./Experience";
+import Education from "./Education";
 
 function App() {
   return (
@@ -31,15 +33,7 @@ function App() {
       <main>
         <Experience />
 
-        <section id="education">
-          <h2>Education</h2>
-          <h3>San Francisco Art Institute</h3>
-          <p>2016</p>
-          <p>Post-Baccalaureate, New Genres</p>
-          <h3>Middlebury College</h3>
-          <p>2015</p>
-          <p>Bachelors, Humanities & Liberal Arts</p>
-        </section>
+        <Education />
 
         <h2>Contact</h2>
         <address id="contact">
@@ -48,7 +42,7 @@ function App() {
               <b>Email address:</b>{" "}
               <a
                 href="mailto:sallystudent@gmail.com?subject=Hi%20Sally!"
-                target="_blank"
+                target="_blank" rel="noopener"
               >
                 sallystudent@gmail.com
               </a>
