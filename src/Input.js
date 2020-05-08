@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 // per: https://reactjs.org/docs/forms.html
@@ -15,19 +16,19 @@ class InputForm extends React.Component {
     // Instead, assign the initial state like so...
     this.state = {value: ''};
 
-    console.log(this.state);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     this.setState({value: event.target.value});
   }
 
   handleSubmit(event) {
     event.preventDefault();
     console.log('Something was submitted: ' + this.state.value);
+    this.props.handleSubmit(this.state.value)
   }
 
   render() {

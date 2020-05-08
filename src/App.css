@@ -6,6 +6,14 @@ hr {
   margin: 40px 0 40px 0;
 }
 
+.inputResults {
+  color: #ccc;
+}
+.submit-value {
+  color: rgb(238, 48, 23);
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
 }

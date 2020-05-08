@@ -9,6 +9,7 @@ import Contacts from "./Contacts";
 import Button from './Button';
 import Number from './Number';
 import InputForm from './Input';
+import InputRender from './InputRender';
 
 /*
   [1] render a button and a number, every button click increments the number
@@ -21,6 +22,7 @@ class App extends React.Component {
 
   state = {
     number: 0,
+    value: ''
   }
 
   handleButtonClick = () => {
@@ -31,13 +33,22 @@ class App extends React.Component {
     })
   }
 
+  // event handler passed to inputform it will call on submission to update the state here
+  handleSubmitzzzz = value => {
+    this.setState({
+      value,
+    })
+  }
+
   render() {
 
     const { number } = this.state;
 
     return (
       <div className="App">
-        <InputForm />
+        <InputForm handleSubmit={this.handleSubmitzzzz} />
+        {/*sibling component which will get the state to render*/}
+        <InputRender value={this.state.value} />
         <hr />
         <Button handleClick={this.handleButtonClick} />
         <Number number={number} />
